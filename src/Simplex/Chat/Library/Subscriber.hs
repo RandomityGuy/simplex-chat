@@ -2058,14 +2058,7 @@ processAgentMessageConn cxt user@User {userId} corrId agentConnId agentMessage =
         deleteRcvChatItem = do
           cci@(CChatItem msgDir ci) <- withStore $ \db -> getDirectChatItemBySharedMsgId db user contactId sharedMsgId
           case msgDir of
-            SMDRcv
-              | rcvItemDeletable ci brokerTs -> do
-                  deletions <-
-                    if featureAllowed SCFFullDelete forContact ct
-                      then deleteDirectCIs user ct [cci]
-                      else markDirectCIsDeleted user ct [cci] brokerTs
-                  toView $ CEvtChatItemsDeleted user deletions False False
-              | otherwise -> messageError "x.msg.del: contact attempted invalid message delete"
+            SMDRcv -> messageError "x.msg.del: contact attempted invalid message delete"
             SMDSnd -> messageError "x.msg.del: contact attempted invalid message delete"
 
     rcvItemDeletable :: ChatItem c d -> UTCTime -> Bool
@@ -2338,18 +2331,13 @@ processAgentMessageConn cxt user@User {userId} corrId agentConnId agentMessage =
             let msgMemberId = fromMaybe memberId sndMemberId_
                 isAuthor = sameMemberId memberId mem
             in case sndMemberId_ of
-              -- regular deletion
-              Nothing
-                | isAuthor && onlyHistory && publicGroupEditor gInfo m ->
-                    delete cci False Nothing $> Nothing
-                | isAuthor && not onlyHistory && rcvItemDeletable ci brokerTs ->
-                    delete cci False Nothing
-                | otherwise ->
-                    messageError "x.msg.del: member attempted invalid message delete" $> Nothing
+              -- regular deletion - rejected to prevent members from deleting their sent messages
+              Nothing ->
+                messageError "x.msg.del: member attempted invalid message delete" $> Nothing
               -- moderation (not limited by time)
               Just _
-                | isAuthor && msgMemberId == memberId ->
-                    delete cci False (Just m)
+                | isAuthor ->
+                    messageError "x.msg.del: member attempted invalid message delete" $> Nothing
                 | otherwise -> moderate m mem cci
           (CIChannelRcv, _)
             | isNothing sndMemberId_ && isOwner ->
