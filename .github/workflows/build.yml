@@ -26,6 +26,7 @@ on:
       - "scripts/desktop/**"
       - ".github/**"
 
+    workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/v') }}
@@ -174,6 +175,13 @@ jobs:
           path=$(cabal list-bin simplex-chat | tail -n 1)
           echo "bin_path=$path" >> $GITHUB_OUTPUT
           echo "bin_hash=$(echo SHA2-256\(${{ matrix.cli_asset_name }}\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
+
+      - name: Upload CLI artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.cli_asset_name }}
+          path: ${{ steps.windows_cli_build.outputs.bin_path }}
 
       - name: Upload CLI
         if: startsWith(github.ref, 'refs/tags/v')
