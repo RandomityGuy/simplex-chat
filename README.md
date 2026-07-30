@@ -8,7 +8,7 @@
 
 <img src="images/github-banner.jpg" alt="SimpleX logo" width="100%">
 
-Invest in SimpleX Chat. [Register now](https://simplexchat.typeform.com/crowdfunding).
+Invest in SimpleX Chat [Register now](https://simplexchat.typeform.com/crowdfunding).
 
 # SimpleX - the first messaging platform that has no user identifiers of any kind - 100% private by design!
 
@@ -166,21 +166,35 @@ SimpleX Chat founder
 
 ## Contents
 
-- [Why privacy matters](#why-privacy-matters)
-- [SimpleX approach to privacy and security](#simplex-approach-to-privacy-and-security)
-  - [Complete privacy](#complete-privacy-of-your-identity-profile-contacts-and-metadata)
-  - [Protection against spam and abuse](#the-best-protection-against-spam-and-abuse)
-  - [Ownership and security of your data](#complete-ownership-control-and-security-of-your-data)
-  - [Users own SimpleX network](#users-own-simplex-network)
-- [Frequently asked questions](#frequently-asked-questions)
-- [News and updates](#news-and-updates)
-- [Quick installation of a terminal app](#zap-quick-installation-of-a-terminal-app)
-- [SimpleX Platform design](#simplex-platform-design)
-- [Privacy and security: technical details and limitations](#privacy-and-security-technical-details-and-limitations)
-- [For developers](#for-developers)
-- [Develop a chat bot](#develop-a-chat-bot)
-- [Roadmap](#roadmap)
-- [Disclaimers, Security contact, License](#disclaimers)
+- [SimpleX - the first messaging platform that has no user identifiers of any kind - 100% private by design!](#simplex---the-first-messaging-platform-that-has-no-user-identifiers-of-any-kind---100-private-by-design)
+  - [Welcome to SimpleX Chat!](#welcome-to-simplex-chat)
+  - [Install the app](#install-the-app)
+  - [Connect to the team](#connect-to-the-team)
+  - [Join user groups](#join-user-groups)
+  - [Follow our updates](#follow-our-updates)
+  - [Make a private connection](#make-a-private-connection)
+  - [User guide (NEW)](#user-guide-new)
+  - [Contribute](#contribute)
+  - [Help translating SimpleX Chat](#help-translating-simplex-chat)
+  - [Please support us with your donations](#please-support-us-with-your-donations)
+  - [Contents](#contents)
+  - [Why privacy matters](#why-privacy-matters)
+  - [SimpleX approach to privacy and security](#simplex-approach-to-privacy-and-security)
+    - [Complete privacy of your identity, profile, contacts and metadata](#complete-privacy-of-your-identity-profile-contacts-and-metadata)
+    - [The best protection against spam and abuse](#the-best-protection-against-spam-and-abuse)
+    - [Complete ownership, control and security of your data](#complete-ownership-control-and-security-of-your-data)
+    - [Users own SimpleX network](#users-own-simplex-network)
+  - [Frequently asked questions](#frequently-asked-questions)
+  - [News and updates](#news-and-updates)
+  - [:zap: Quick installation of a terminal app](#zap-quick-installation-of-a-terminal-app)
+  - [SimpleX Platform design](#simplex-platform-design)
+  - [Privacy and security: technical details and limitations](#privacy-and-security-technical-details-and-limitations)
+  - [For developers](#for-developers)
+  - [Develop a chat bot](#develop-a-chat-bot)
+  - [Roadmap](#roadmap)
+  - [Disclaimers](#disclaimers)
+  - [Security contact](#security-contact)
+  - [License](#license)
 
 ## Why privacy matters
 
